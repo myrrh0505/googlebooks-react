@@ -4,31 +4,23 @@ class Search extends Component {
 
     handleSubmit = (e) => {
         e.preventDefault();
-        
-        let newBookList = e.target.newBookList.value;
-        
-        this.props.addBookList(newBookList);
-        
-        console.log( newBookList);
+
+        let newSearch = e.target.newSearch.value;
+
+        this.props.getBookList ( newSearch);
+
+        console.log(newSearch);
     }
 
     render() {
-        return (
-            <div>
-                <h2>Search</h2>
-                
-                <form onSubmit={(e) => this.handleSubmit(e)}>
-                    <label>Search:</label>
-                    <input
-                        type='text'
-                        name='newBookList'
-                        id='search'
-                        placeholder='Search your book'
-                        value=''
-                        />
-                        <button>Search book</button>
-                </form>
-            </div>
+        return(
+            <form onSubmit={(e) => this.handleSubmit(e)}>
+                <label>Search</label>
+                <input name="newSearch" id="newSearch" type='text' />
+                <button type='submit'>
+                    Change Name
+                </button>
+            </form>
         )
     }
 }
