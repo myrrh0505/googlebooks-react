@@ -15,10 +15,12 @@ class App extends Component {
     this.getBookList = () => {
       fetch('https://www.googleapis.com/books/v1/volumes?q=harrypotter&key=AIzaSyBEGeoquEp6hiu91xgPGqre9MdPv5g1Ioc')
           .then(res => res.json())
+          
           .then(json => {
-            
+            console.log(json)
             this.setState({
-              booklist: json,
+              booklist: json.items,
+              
             })
           })
           
@@ -33,7 +35,7 @@ class App extends Component {
   
   render() {
       
-         
+         console.log(this.state)
    
          
 
