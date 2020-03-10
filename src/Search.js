@@ -7,9 +7,10 @@ class Search extends Component {
 
         let newSearch = e.target.newSearch.value;
 
-        this.props.getBookList ( newSearch);
+        this.props.handleSearch ( newSearch);
 
         console.log(newSearch);
+        console.log(this.props)
     }
 
     render() {
