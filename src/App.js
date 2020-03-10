@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import Search from './Search'
 import './App.css';
-import Header from './Header'
+import Header from './Header';
+import ShowInfo from './ShowInfo';
 
 class App extends Component {
 
@@ -19,7 +20,8 @@ class App extends Component {
           .then(json => {
             console.log(json)
             this.setState({
-              booklist: json.items,
+              booklist: json.items
+              ,
               
             })
           })
@@ -35,7 +37,7 @@ class App extends Component {
   
   render() {
       
-         console.log(this.state)
+         console.log(this.state.booklist)
    
          
 
@@ -45,7 +47,8 @@ class App extends Component {
       <div className="App">
         <Header />
        <Search handleSearch={this.getBookList}/>
-    
+       <ShowInfo books={this.state.booklist}/>
+
        
       </div>
 

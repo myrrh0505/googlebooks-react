@@ -10,7 +10,7 @@ class Search extends Component {
         this.props.handleSearch ( newSearch);
 
         console.log(newSearch);
-        console.log(this.props)
+        console.log(this.props.booklist)
     }
 
     render() {
